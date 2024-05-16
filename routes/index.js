@@ -12,6 +12,9 @@ import getSynthese from '../controller/getSynthese.js';
 import getCategories from '../controller/getCategories.js';
 import addBalade from '../controller/addBalade.js';
 import addKeyword from '../controller/addKeyword.js';
+import updateBalade from '../controller/updateBalade.js';
+import updateMany from '../controller/updateMany.js';
+import deleteBalade from '../controller/deleteBalade.js';
 
 router.get('/all', getAllBalade);
 router.get('/id/:id', getBalade);
@@ -24,5 +27,8 @@ router.get('/synthese', getSynthese);
 router.get('/categories', getCategories);
 router.post('/add', addBalade);
 router.put('/add-mot_cle/:id', addKeyword);
+router.put('/update-one/:id', updateBalade);
+router.put('/update-many/:search', updateMany);
+router.delete('/delete/:id', deleteBalade);
 
 export default router;
