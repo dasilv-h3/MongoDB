@@ -4,6 +4,7 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
+        console.log("Connexion en attente...");
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('Connected to MongoDB');
     } catch (err) {
@@ -11,4 +12,4 @@ const connectDB = async () => {
     }
 };
 
-export default connectDB;
+export default connectDB; 

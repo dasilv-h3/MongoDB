@@ -1,17 +1,25 @@
-import { Schema  } from 'mongoose';
-const Schema = Schema;
+import { Schema, model } from 'mongoose';
 
 const baladeSchema = new Schema({
     identifiant: String,
-    adresse: String,
+    adresse: {
+        type: String,
+        required:true
+    },
     code_postal: String,
     parcours: [String],
     url_image: String,
     copyright_image: String,
     legende: String,
-    categorie: String,
-    nom_poi: String,
-    date_saisie: Date,
+    categorie: {
+        type: String,
+        required: true
+    },
+    nom_poi: {
+        type: String,
+        required:true
+    },
+    date_saisie: String,
     mot_cle: [String],
     ville: String,
     texte_intro: String,
@@ -43,4 +51,4 @@ const baladeSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('balade', baladeSchema);
+export default model('balade', baladeSchema); 
